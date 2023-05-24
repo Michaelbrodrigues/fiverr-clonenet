@@ -15,6 +15,9 @@ async function run() {
         await client.connect();
         console.log("Connected correctly to server");
             alert("You are connected!");
+                app.get('/', (request, response) => {
+                    response.send('you are connected!');
+                });
 
     } catch (err) {
         console.log(err.stack);
