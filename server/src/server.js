@@ -14,6 +14,7 @@ async function run() {
     try {
         await client.connect();
         console.log("Connected correctly to server");
+            alert("You are connected!");
 
     } catch (err) {
         console.log(err.stack);
@@ -37,7 +38,7 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(compression());
 app.use(cors({
-    origin: ['http://localhost:5173', 'http://localhost:4173', 'https://fiverr-clone-zuhed.netlify.app'],
+    origin: ['http://localhost:5173', 'http://localhost:4173', 'https://fazumbicobom.netlify.app/'],
     credentials: true
 }));
 
