@@ -1,10 +1,29 @@
 require('dotenv').config();
 const express = require('express');
+const { MongoClient } = require("mongodb");
 const compression = require('compression');
 const cors = require('cors');
 const cookieParser = require('cookie-parser');
 const connect = require('./configs/db');
 const PORT = 8080;
+
+//conecction to mongodb                                                                                                                                        
+const url = "mongodb+srv://michaelbrunorodrigues:b2uSExcG@cluster0.kabxwa5.mongodb.net/?retryWrites=true&w=majority";
+const client = new MongoClient(url);
+async function run() {
+    try {
+        await client.connect();
+        console.log("Connected correctly to server");
+
+    } catch (err) {
+        console.log(err.stack);
+    }
+    finally {
+        await client.close();
+    }
+}
+
+run().catch(console.dir);
 
 // Other Route files
 const { userRoute, conversationRoute, gigRoute, messageRoute, orderRoute, reviewRoute, authRoute } = require('./routes');
