@@ -8,7 +8,7 @@ const connect = require('./configs/db');
 const PORT = 8080;
 
 //conecction to mongodb                                                                                                                                        
-const url = "mongodb+srv://michaelbrunorodrigues:b2uSExcG@cluster0.kabxwa5.mongodb.net/?retryWrites=true&w=majority";
+const url = "mongodb+srv://michaelbrunorodrigues:@cluster0.kabxwa5.mongodb.net/?retryWrites=true&w=majority";
 const client = new MongoClient(url);
 async function run() {
     try {
